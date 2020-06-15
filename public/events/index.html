@@ -1,0 +1,353 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
+      defer
+    ></script>
+
+    <div class="relative bg-gray-900 overflow-hidden">
+      <div
+        x-data="{ open: false }"
+        class="relative pt-6 pb-1 md:pb-3 lg:pb-2 xl:pb-4"
+      >
+        <div class="bg-gray-900">
+          <nav x-data="{ open: true}" class="bg-gray-900">
+            <div class="max-w-screen-xl mx-auto px-2 sm:px-4 lg:px-8">
+              <div class="relative flex items-center justify-between h-16">
+                <div class="flex items-center px-2 lg:px-0">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="block lg:hidden h-8 w-auto"
+                      src="https://www.hireplace.com/assets/svg/logo-white.svg"
+                      alt=""
+                    />
+                    <img
+                      class="hidden lg:block h-8 w-auto"
+                      src="https://www.hireplace.com/assets/svg/logo-white.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="hidden lg:block lg:ml-6">
+                    <!-- <div class="flex">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm leading-5 font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
+                    <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
+                    <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
+                    <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+                  </div> -->
+                  </div>
+                </div>
+                <div class="flex-1 flex justify-center lg:ml-6 lg:justify-end">
+                  <div class="max-w-7xl w-full lg:max-w-7xl">
+                    <label for="search" class="sr-only">Search</label>
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                      >
+                        <svg
+                          class="h-5 w-5 text-gray-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+
+                      <input
+                        id="search"
+                        class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-l-md leading-5 bg-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white sm:text-sm transition duration-150 ease-in-out"
+                        placeholder="Search"
+                        type="search"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  <svg
+                    class="h-5 w-5 text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z"
+                    />
+                  </svg>
+                  <span class="ml-2">Sort</span>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <main>
+          <div class="max-w-7xl mx-auto pb-8 px-4 sm:px-6 lg:px-8">
+            <!-- Start replace -->
+            <div class="bg-gray-900">
+              <!-- <header class="pt-6 pb-4">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <h2
+                    class="text-5xl tracking-tight 
+                    font-bold text-gray-100 sm:leading-none 
+                    sm:text-5xl lg:text-4xl xl:text-4xl leading-9 font-bold text-white">
+                    Upcoming Events
+                  </h2>
+                </div>
+              </header> -->
+              <!-- <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="max-w-3xl mx-auto lg:max-w-none">
+                    <h2 class="text-lg leading-6 font-semibold text-gray-300 uppercase tracking-wider">
+                      Pricing
+                    </h2>
+                    <p class="mt-2 text-3xl leading-9 font-extrabold text-white sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none">
+                      The right price for you, whoever you are
+                    </p>
+                    <p class="mt-2 text-xl leading-7 text-gray-300">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi unde repudiandae natus.
+                    </p>
+                  </div>
+                </div>
+              </div> -->
+              <div id="upcomingevent">
+                
+                <div class="mt-6 pb-12 bg-gray-900 sm:mt-8 sm:pb-16 lg:mt-10 lg:pb-24">
+                  <div class="relative">
+                    <div class="absolute inset-0 h-3/4 bg-gray-900"></div>
+                    <div class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div class="max-w-md mx-auto lg:max-w-5xl lg:grid lg:grid-cols-3 lg:gap-5">
+            
+                        <div class="mt-4 rounded-lg shadow-lg overflow-hidden lg:mt-0" v-for="(item, i) in list_upcoming" :key="i">
+                          <div class="h-48 overflow-hidden bg-white">
+                            <span
+                              class="ml-6 inline-flex mt-3 px-4 py-1 rounded-full text-sm leading-5 font-semibold tracking-wide uppercase bg-gray-200 text-gray-600">
+                              {{ item.fields.Category }}
+                            </span>
+                            <img class="w-full object-cover object-center" :src="item.fields['Event Image'][0].thumbnails.large.url + '?w=480'" />
+                          </div>
+            
+                          <div class="px-6 py-2 bg-gray-50">
+                            <div class="h-8 mt-3 flex items-baseline text-3xl text-gray-900 leading-none font-bold">
+                              {{ convertEventName(item.fields["Name of the Event"]) }}
+                            </div>
+                            <p class="py-2 text-lg leading-7 font-bold text-gray-900">
+                              Companies Attending:
+                            </p>
+                            <div class="text-left" :id="i + '-list-company'"></div>
+                          </div>
+                          <div class="px-6 pt-3 pb-8 bg-gray-50 sm:p-6 sm:pt-2">
+                            <ul>
+                              <li class="mt-2 flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                      clip-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                                <p class="ml-3 text-base leading-6 text-gray-700">
+                                  {{ getDateEvent(item.fields["Date and time of your event"]) }}
+                                </p>
+                              </li>
+                              <li class="flex items-start">
+                                <p class="ml-9 text-base leading-6 text-gray-400">
+                                  {{ getTimeEvent(item.fields["Date and time of your event"]) }}
+                                </p>
+                              </li>
+                              <li class="mt-3 flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                      clip-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                                <p class="ml-3 text-base leading-6 text-gray-700">
+                                  {{ item.fields["Duration of the Interview"] }} mins / interview
+                                </p>
+                              </li>
+                              <li class="mt-3 flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path
+                                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                    </path>
+                                  </svg>
+                                </div>
+                                <p class="ml-3 text-base leading-6 text-gray-700">
+                                  By {{ item.fields["Company Name"] }}
+                                </p>
+                              </li>
+                              <li class="mt-3 flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                      clip-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                                <p class="ml-3 text-base leading-6 text-gray-700">
+                                  {{ item.fields.Country }}
+                                </p>
+                              </li>
+                            </ul>
+                            <div class="mt-6 rounded-md shadow">
+                              <a :href="'/UAT/details/?event=' + item.fields['Name of the Event']"
+                                class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-600 hover:bg-pink-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                Learn More
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+            </div>
+            
+          </div>
+          <!-- CTA -->
+          <div
+            class="max-w-screen-xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8"
+          >
+            <h2
+              class="text-3xl leading-9 font-extrabold tracking-tight text-gray-100 sm:text-4xl sm:leading-10"
+            >
+              Ready for
+              <span class="text-pink-600">speed interviews?</span>
+              <br />
+              Download the app now.
+            </h2>
+            <div class="mt-8 flex justify-center">
+              <div class="inline-flex rounded-md shadow">
+                <a href="#"
+                  ><img
+                    class="h-12"
+                    src="https://www.seekpng.com/png/full/223-2231228_google-play-store-logo-png.png"
+                /></a>
+              </div>
+              <div class="ml-3 inline-flex rounded-md shadow">
+                <a href="#"
+                  ><img
+                    class="h-12"
+                    src="https://www.seekpng.com/png/full/7-77874_google-play-png.png"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <script>
+      var api_key = `keyNRXEcdgCPmt6P3`
+      var url_airtable = `https://api.airtable.com/v0/app5rN7ZHPPukTR9E`
+      new Vue({
+        el: "#upcomingevent",
+        data: {
+          title: "Upcoming Events",
+          list_upcoming: []
+        },
+        methods: {
+          getUpComingEvent() {
+            axios.get(`${url_airtable}/Events?maxRecords=3&filterByFormula=FIND("Published",{Status})&view=Grid%20view`, {
+              headers: {
+                Authorization: `Bearer ${api_key}`
+              }
+            }).then(res => {
+              if (res.status && res.data.records.length) {
+                this.list_upcoming = res.data.records
+                for (let i = 0; i < res.data.records.length; i++) {
+                  this.getCompanies(i, res.data.records[i].fields['Name of the Event'])
+                }
+              }
+            }).catch(err => {
+              console.log(err);
+            })
+          },
+          async getCompanies(i, id) {
+            await axios.get(`${url_airtable}/Employers?maxRecords=5&filterByFormula=AND(FIND("Published",{Status}),FIND("${escape(id)}",{eventID}))&view=Grid%20view`, {
+              headers: {
+                Authorization: `Bearer ${api_key}`
+              }
+            }).then(res => {
+              if (res.status && res.data.records.length) {
+                var result = ``
+  
+                for (let j = 0; j < res.data.records.length; j++) {
+                  result += `<img class="mr-1 inline-block h-8 w-8 rounded-full text-white shadow-solid" src="${res.data.records[j].fields['Company Logo'][0].thumbnails.small.url}?w=256&h=256" alt="${res.data.records[j].fields['Name of the Event']}" />`
+                }
+                
+                document.getElementById(i + '-list-company').innerHTML = result
+              }
+            }).catch(err => {
+              console.log(err);
+            })
+          },
+          convertEventName(name) {
+            var result = name
+  
+            if (name.length > 15) {
+              result = name.substr(0, 15) + '...';
+            }
+  
+            return result
+          },
+          convertTime (time) {
+            time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  
+            if (time.length > 1) {
+              time = time.slice (1);
+              time[5] = +time[0] < 12 ? 'AM' : 'PM';
+              time[0] = +time[0] % 12 || 12;
+            }
+            return time.join ('');
+          },
+          getDateEvent(date) {
+            date = new Date(date)
+            
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var the_day = days[date.getDay()]
+            var the_date = date.getDate()
+            var the_month = monthNames[date.getMonth()]
+  
+            return the_day + ', ' + the_date + ' ' + the_month
+          },
+          getTimeEvent(date) {
+            date = new Date(date)
+  
+            var hour = date.getHours().toString().length == 1 ? '0' + date.getHours() : date.getHours()
+            var minute = date.getMinutes().toString().length == 1 ? '0' + date.getMinutes() : date.getMinutes()
+            var time = hour + ':' + minute
+  
+            return this.convertTime(time)
+          }
+        },
+        mounted() {
+          this.getUpComingEvent()
+        },
+      });
+    </script>
+
+  </body>
+</html>

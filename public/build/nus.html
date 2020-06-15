@@ -1,0 +1,492 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Interviews</title>
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
+      defer
+    ></script>
+
+    <div class="relative bg-gray-900 overflow-hidden">
+      <div class="hidden lg:block lg:absolute lg:inset-0">
+        <svg
+          class="absolute top-0 left-1/2 transform translate-x-64 -translate-y-8"
+          width="640"
+          height="784"
+          fill="none"
+          viewBox="0 0 640 784"
+        >
+          <defs>
+            <pattern
+              id="9ebea6f4-a1f5-4d96-8c4e-4c2abf658047"
+              x="118"
+              y="0"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <rect
+                x="0"
+                y="0"
+                width="4"
+                height="4"
+                class="text-pink-800"
+                fill="currentColor"
+              />
+            </pattern>
+          </defs>
+          <rect
+            y="72"
+            width="640"
+            height="640"
+            class="text-gray-900"
+            fill="currentColor"
+          />
+          <rect
+            x="118"
+            width="404"
+            height="784"
+            fill="url(#9ebea6f4-a1f5-4d96-8c4e-4c2abf658047)"
+          />
+        </svg>
+      </div>
+      <div x-data="{ open: false }" class="relative pt-6 ">
+        <nav
+          class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6"
+        >
+          <div class="flex items-center flex-1">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <img
+                  class="h-8 w-auto sm:h-10"
+                  src="https://www.hireplace.com/assets/svg/logo-white.svg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="md:block text-right">
+          <span class="inline-flex rounded-md shadow-md">
+            <span class="inline-flex rounded-md shadow-xs">
+              <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-pink-600 bg-white hover:bg-gray-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                For Employers
+              </a>
+            </span>
+          </span>
+        </div> -->
+        </nav>
+        <div
+          class="mt-8 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-20 xl:mt-24"
+        >
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div
+              class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
+            >
+              <h2
+                class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-100 sm:leading-none sm:text-5xl lg:text-6xl xl:text-6xl"
+              >
+                Virtual hiring events for
+                <span class="text-pink-600">NUS students</span>
+              </h2>
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-200 ">
+                Hi guys, my name is Jing Jie. I am studying Industrial Design at
+                NUS. I was part of the NOC Beijing batch that got called back
+                due to COVID-19.
+                <!-- <div class="mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+              <p class="text-base font-medium text-gray-100">
+                Get notified when we launch              </p>
+            
+              <form action="https://airtable.com/shruOkqwCXAPqRQ1e" method="GET" class="mt-3 sm:flex">
+                <input type= "email" required aria-label="Email"  name="prefill_Email" class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Enter your email" />
+                <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-800 shadow-sm hover:bg-pink-700 focus:outline-none focus:shadow-outline active:bg-pink-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                  Notify me
+                </button>
+              </form>
+            </div> -->
+              </p>
+
+              <footer class="mt-8">
+                <div class="flex">
+                  <div class="flex-shrink-0 lg:hidden">
+                    <img
+                      class="h-12 w-12 rounded-full"
+                      src="https://lh3.googleusercontent.com/-hnYJmrwADNE/XAU4933fzTI/AAAAAAAAAI0/lsn8R8bi7PE-dHwX1MaiBDyuhNwAqe_7ACEwYBhgL/w140-h140-p/IMG_5954%2B2.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ml-4 lg:ml-0">
+                    <div class="text-base leading-6 font-medium text-gray-200">
+                      Jing Jie
+                    </div>
+                    <div class="text-base leading-6 font-medium text-pink-600">
+                      NUS Industrial Design Year 3
+                    </div>
+                  </div>
+                </div>
+              </footer>
+            </div>
+            <div
+              class="mt-12 sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 "
+            >
+              <div x-data="{ open: false }">
+                <div class="relative mx-auto w-64 rounded-lg  lg:max-w-md">
+                  <div class="hidden lg:block lg:flex-shrink-0">
+                    <img
+                      class="h-64 w-64 rounded-full "
+                      src="https://lh3.googleusercontent.com/-hnYJmrwADNE/XAU4933fzTI/AAAAAAAAAI0/lsn8R8bi7PE-dHwX1MaiBDyuhNwAqe_7ACEwYBhgL/w140-h140-p/IMG_5954%2B2.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  x-show="open"
+                  style="display: none;"
+                  class="absolute inset-0 p-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-900 overflow-hidden">
+      <div class="relative pt-8 pb-8 md:pb-10 md:pt-10 lg:pb-12 lg:pt-12 xl:pb-16 xl:pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div
+              class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
+            >
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-200">
+                Luckily for me, the team at NOC is world class in what they do
+                and found me an internship in under two weeks. I am now
+                interning at an early stage startup, Hireplace.
+              </p>
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-200">
+                What Hireplace is trying to do, is to match job seekers with
+                employers in a speed dating format, virtually.
+              </p>
+              <!-- <div class="mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+              <p class="text-base font-medium text-gray-100">
+                Get notified when we launch              </p>
+            
+              <form action="https://airtable.com/shruOkqwCXAPqRQ1e" method="GET" class="mt-3 sm:flex">
+                <input type= "email" required aria-label="Email"  name="prefill_Email" class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Enter your email" />
+                <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-800 shadow-sm hover:bg-pink-700 focus:outline-none focus:shadow-outline active:bg-pink-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                  Notify me
+                </button>
+              </form>
+            </div> -->
+              <footer class="mt-8">
+                <div class="flex">
+                  <div class="flex-shrink-0 lg:hidden">
+                    <img
+                      class="h-64"
+                      src="https://www.hireplace.com/assets/img/web-mobile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </footer>
+            </div>
+            <div
+              class="mt-12 sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 "
+            >
+              <div x-data="{ open: false }">
+                <div class="relative mx-auto rounded-lg  lg:max-w-md">
+                  <div class="hidden lg:block lg:flex-shrink-0">
+                    <img
+                      class="h-64 w-auto "
+                      src="https://www.hireplace.com/assets/img/web-mobile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  x-show="open"
+                  style="display: none;"
+                  class="absolute inset-0 p-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-200 overflow-hidden">
+      <div class="relative pt-8 pb-8 md:pb-10 md:pt-10 lg:pb-12 lg:pt-12 xl:pb-16 xl:pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div
+              class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
+            >
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-900">
+                I have tried to find jobs in the past and went through the whole
+                process of putting your CV on job portals, sending your CV out
+                to multiple employers and praying that you get a reply from
+                companies. More often than not, zero replies.
+              </p>
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-900">
+                Instead of that disappointing experience, Hireplace helps you to
+                talk to multiple companies, in a one hour event.
+              </p>
+
+              <!-- <div class="mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+              <p class="text-base font-medium text-gray-100">
+                Get notified when we launch              </p>
+            
+              <form action="https://airtable.com/shruOkqwCXAPqRQ1e" method="GET" class="mt-3 sm:flex">
+                <input type= "email" required aria-label="Email"  name="prefill_Email" class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Enter your email" />
+                <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-800 shadow-sm hover:bg-pink-700 focus:outline-none focus:shadow-outline active:bg-pink-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                  Notify me
+                </button>
+              </form>
+            </div> -->
+              <footer class="mt-8">
+                <div class="flex">
+                  <div class="flex-shrink-0 lg:hidden">
+                    <img
+                      class="h-64"
+                      src="https://www.hireplace.com/assets/img/web-mobile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </footer>
+            </div>
+            <div
+              class="mt-12 sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 "
+            >
+              <div x-data="{ open: false }">
+                <div class="relative mx-auto rounded-lg  lg:max-w-md">
+                  <div class="hidden lg:block lg:flex-shrink-0">
+                    <img
+                      class="h-64 w-auto "
+                      src="https://www.hireplace.com/assets/img/web-mobile.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  x-show="open"
+                  style="display: none;"
+                  class="absolute inset-0 p-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-900 overflow-hidden">
+      <div class="relative pt-8 pb-8 md:pb-10 md:pt-10 lg:pb-12 lg:pt-12 xl:pb-16 xl:pb-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div
+              class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
+            >
+              <p class="mt-3 text-2xl leading-9 font-medium text-gray-200">
+                Typically, the event will host 3-8 companies. You get to have a
+                5 minute “pre-interview” session with each company, where you
+                introduce yourself and the company introduce themselves.
+              </p>
+              <p class="mt-5 text-2xl leading-9 font-medium text-gray-200">
+                Face to face using video calls.
+              </p>
+              <p class="mt-5 text-2xl leading-9 font-medium text-gray-200">
+                In just one hour, you can score multiple interviews and have a
+                chance to make a lasting impression. Also, being able to expose
+                yourself to multiple companies can help you compare the
+                different qualities of each company.
+              </p>
+              <p class="mt-5 text-2xl leading-9 font-medium text-gray-200">
+                We have organised two live events with NOC and the majority of
+                students that joined both events were shortlisted by companies.
+                We are now going into the second phase to host more events for
+                every student in NUS.
+              </p>
+
+
+            </div>
+            <div
+              class="mt-24 sm:max-w-xs sm:mx-auto lg:mt-0 lg:max-w-sm lg:mx-0 lg:col-span-4 lg:col-start-8"
+            >
+              <!-- 
+  card -->
+
+              <div class="mt-4 rounded-lg shadow-lg overflow-hidden lg:mt-0">
+                <div class="  h-48 overflow-hidden bg-white">
+                  <span
+                    class="ml-6 inline-flex mt-3 px-4 py-1 rounded-full text-sm leading-5 font-semibold tracking-wide uppercase bg-gray-200 text-gray-600"
+                  >
+                    Professional
+                  </span>
+                  <img class="w-full object-cover object-center ": src=
+                  "https://angularzurich.dev/src/assets/images/logo.svg" >
+                </div>
+
+                <div class=" px-6 py-2 bg-gray-50 ">
+                  <div
+                    class="h-8 mt-3  flex items-baseline text-3xl text-gray-900 leading-none font-bold"
+                  >
+                    Angular Developers
+                    <!-- <span class="ml-1 text-2xl leading-8 font-medium text-gray-500">
+          /mo
+        </span> -->
+                  </div>
+                  <p class="py-2 text-lg leading-7 font-bold text-gray-900 ">
+                    Companies Attending:
+                  </p>
+                  <div class=" text-left">
+                    <img
+                      class="mr-1 inline-block h-8 w-8 rounded-full text-white shadow-solid"
+                      src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=256&h=256"
+                      alt=""
+                    />
+                    <img
+                      class="mr-1 inline-block h-8 w-8 rounded-full text-white shadow-solid"
+                      src="https://www.pinclipart.com/picdir/big/487-4874977_schneeflocke-clipart.png"
+                      alt=""
+                    />
+                    <img
+                      class="mr-1 inline-block h-8 w-8 rounded-full text-white shadow-solid"
+                      src="https://www.pinclipart.com/picdir/big/31-311969_spotify-music-app-earpod-spot-hear-musik-hren.png"
+                      alt=""
+                    />
+                    <img
+                      class="inline-block h-8 w-8 rounded-full text-white shadow-solid"
+                      src="https://www.pinclipart.com/picdir/big/2-27387_michigan-non-profits-looking-to-google-to-fight.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="px-6 pt-3 pb-8 bg-gray-50 sm:p-6 sm:pt-2">
+                  <ul>
+                    <li class="mt-2 flex items-start">
+                      <div class="flex-shrink-0">
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base leading-6 text-gray-700">
+                        Tuesday, 24 March
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <p class=" ml-9 text-base leading-6 text-gray-400">
+                        11:30AM - 1:30PM
+                      </p>
+                    </li>
+                    <li class="mt-3 flex items-start">
+                      <div class="flex-shrink-0">
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base leading-6 text-gray-700">
+                        5 mins / interview
+                      </p>
+                    </li>
+                    <li class="mt-3 flex items-start">
+                      <div class="flex-shrink-0">
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base leading-6 text-gray-700">
+                        By Angular Zurich
+                      </p>
+                    </li>
+                    <li class="mt-3 flex items-start">
+                      <div class="flex-shrink-0">
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="ml-3 text-base leading-6 text-gray-700">
+                        Zurich
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="mt-6 rounded-md shadow">
+                    <a
+                      href="build/angularzurich.html"
+                      class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-600 hover:bg-pink-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- 
+  card -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white">
+      <div
+        class="max-w-4xl mx-auto text-center relative pt-8 pb-8 md:pb-10 md:pt-10 lg:pb-12 lg:pt-12 xl:pb-16 xl:pb-16"
+      >
+        <p class="mt-3 text-2xl leading-9 font-medium text-gray-900">
+          Because of the NUS callback, many NUS students are now in the same
+          situation as me. Trying to find an internship. Hence I have negotiated
+          with my founder to help out NUS students for free.
+        </p>
+        <p class="mt-3 text-2xl leading-9 font-medium text-gray-900">
+          You can sign up today and fill in your particulars. When we have an
+          event that is ready, we will then notify you.
+        </p>
+
+        <div class="mt-8 flex justify-center">
+
+            
+              <form action="https://airtable.com/shruOkqwCXAPqRQ1e" method="GET" class="mt-3 sm:flex">
+                <input type= "email" required aria-label="Email"  name="prefill_Email" class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1" placeholder="Enter your email" />
+                <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-800 shadow-sm hover:bg-pink-700 focus:outline-none focus:shadow-outline active:bg-pink-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                  Notify me
+                </button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
+      defer
+    ></script>
+
+    <div class="min-h-screen bg-white flex">
+      <div
+        class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
+      >
+        <div class="mx-auto w-full max-w-sm">
+          <div>
+            <div class="pb-24">
+              <img
+                class="h-12 w-auto"
+                src="../static-img/hireplace logo black-01.png"
+                alt="Hireplace Logo"
+              />
+            </div>
+
+            <h2 class="mt-6 text-3xl leading-9 font-bold text-pink-600">
+              Interviewer Login for
+            </h2>
+            <div class="py-4">
+              <img
+                class="inline-block h-14"
+                src="https://image4.owler.com/logo/gigacover_owler_20190628_061107_original.png"
+                alt=""
+              />
+            </div>
+
+            <h2 class="mb-8 lg:hidden text-lg leading-5 font-bold text-red-600">
+              Please use Chrome on your desktop. <br />We do not support mobile.
+            </h2>
+          </div>
+
+          <div class="hidden lg:block">
+            <div class="mt-6">
+              <form action="#" method="POST">
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium leading-5 text-gray-700"
+                  >
+                    Email address
+                  </label>
+                  <div class="mt-1 rounded-md shadow-sm">
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <span class="block w-full rounded-md shadow-sm">
+                    <button
+                      type="submit"
+                      class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700 transition duration-150 ease-in-out"
+                    >
+                      Log in
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- change this css  -->
+      <div class="bg-gray-50  hidden sm:block relative w-0 flex-1">
+        <div class="hidden lg:block lg:absolute lg:inset-0">
+          <svg class="absolute top-0 left-1/2 " width="640" height="784" fill="none" viewBox="0 0 640 784">
+            <defs>
+              <pattern id="9ebea6f4-a1f5-4d96-8c4e-4c2abf658047" x="118" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" class="text-pink-300" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect y="72" width="640" height="640" class="text-gray-100" fill="currentColor" />
+            <rect x="118" width="404" height="784" fill="url(#9ebea6f4-a1f5-4d96-8c4e-4c2abf658047)" />
+          </svg>
+        </div>
+        <img
+          class="p-48 absolute inset-0 h-full w-full object-contain"
+          src="../static-img/Working-at-Home-Icon-AurielAki.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
