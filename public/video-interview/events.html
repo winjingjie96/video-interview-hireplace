@@ -11,387 +11,133 @@
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js"
       defer
     ></script>
-    <div class="h-screen flex overflow-hidden bg-gray-100">
+    <div class="h-screen flex flex-row-reverse  bg-gray-100">
       <!-- Off-canvas menu for mobile -->
-      <div class="md:hidden">
-        <div class="fixed inset-0 flex z-40">
-          <!--
-            Off-canvas menu overlay, show/hide based on off-canvas menu state.
-    
-            Entering: "transition-opacity ease-linear duration-300"
-              From: "opacity-0"
-              To: "opacity-100"
-            Leaving: "transition-opacity ease-linear duration-300"
-              From: "opacity-100"
-              To: "opacity-0"
-          -->
-          <div class="fixed inset-0">
-            <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
-          </div>
-          <!--
-            Off-canvas menu, show/hide based on off-canvas menu state.
-    
-            Entering: "transition ease-in-out duration-300 transform"
-              From: "-translate-x-full"
-              To: "translate-x-0"
-            Leaving: "transition ease-in-out duration-300 transform"
-              From: "translate-x-0"
-              To: "-translate-x-full"
-          -->
-          <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-pink-800">
-            <div class="absolute top-0 right-0 -mr-14 p-1">
-              <button class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600" aria-label="Close sidebar">
-                <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex-shrink-0 flex items-center px-4">
-              <img class="h-8 w-auto" src="../static-img/hireplacewhite.svg" alt="hireplace" />
-            </div>
-  
-          </div>
-          <div class="flex-shrink-0 w-14">
-            <!-- Dummy element to force sidebar to shrink to fit close icon -->
-          </div>
-        </div>
-      </div>
-    
-      <!-- Static sidebar for desktop -->
-      <div class="hidden md:flex md:flex-shrink-0">
-        <div class="flex flex-col w-64 bg-pink-800 pt-5 pb-4">
-          <div class="flex items-center flex-shrink-0 px-4">
-            <img class="h-8 w-auto" src="../static-img/hireplacewhite.svg" alt="hireplace" />
-          </div>
-          <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
-            <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <nav class="flex-1 px-2 bg-pink-800">
-              <a
-                href="/admin/"
-                class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
-              >
-                <svg
-                  class="mr-3 h-6 w-6 text-pink-400 group-focus:text-pink-300 transition ease-in-out duration-150"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
-                  />
-                </svg>
-                Dashboard
-              </a>
-              <a
-                href="/admin/events.html"
-                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-pink-900 focus:outline-none focus:bg-pink-700 transition ease-in-out duration-150"
-              >
-                <svg
-                  class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                Events
-              </a>
-              <a
-                href="/admin/candidates.html"
-                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
-              >
-                <svg
-                  class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                Candidates
-              </a>
 
-              <a
-                href="/admin/roles.html"
-                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
-              >
-                <svg
-                  class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+      <!-- Static sidebar for desktop -->
+      <div class="overflow-auto hidden md:flex md:flex-shrink-0">
+        
+        <div class="flex flex-col w-80 bg-gray-100 pb-4">
+          <a href="index.html">
+          <h4 class="px-4 pt-6 text-3xl leading-8 font-bold text-gray-900">
+            Invited Events          
+          </h4>
+            <div class="p-4">
+              <div class="bg-gray-200 rounded-lg">
+                <div class="flex items-center flex-shrink-0 ">
+                  <img
+                    class="h-auto w-auto rounded-lg"
+                    src="https://dl.airtable.com/.attachmentThumbnails/292967bef3317f4aef25b87d0244aaf2/78c500a8"
+                    alt="hireplace"
                   />
-                </svg>
-                Job Roles
-              </a>
-              <a
-                href="/admin/reports.html"
-                class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
-              >
-                <svg
-                  class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                Reports
-              </a>
-            </nav>
+                </div>
+
+                  <p class="px-3 pt-2 text-md  leading-5 text-gray-600">
+                    By GeekHunter</p>
+
+                  <div class="py-3 ">
+                    <p class="px-3 text-md leading-5 text-gray-800">
+                      Friday 12 Jun
+                    </p>
+                    <p class="px-3 pt-2 text-md leading-5 text-gray-400">
+                      11:00 AM -2:00 PM
+                    </p>
+                    <p class="px-3 pt-2 text-md leading-5 text-gray-800">
+10 mins / interview
+                    </p>
+
+                    <p class="px-3 pt-2 text-md leading-5 text-gray-800">
+                      Singapore
+                    </p>
+                  </div>
+                  <div class="grid grid-cols-6 px-3 pb-3">
+                    <div class='bg-white h-8 w-8 object-center'>
+                      <img class="h-8 w-8 inline-block object-contain object-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="" />
+                    </div>
+                    <div class='bg-white h-8 w-8 object-center'>
+                      <img class="h-8 w-8 inline-block object-contain object-center" src="https://cdn.vox-cdn.com/thumbor/o1bPD39n-_L9gQJrc20Zk-v1G0M=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19345388/Wordmark_Blue_Grey.jpg" alt="" />
+                    </div>
+                    <div class='bg-white h-8 w-8 object-center'>
+                      <img class="h-8 w-8 inline-block object-contain object-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="" />
+                    </div>
+                    <div class='bg-white h-8 w-8 object-center'>
+                      <img class="h-8 w-8 inline-block object-contain object-center" src="https://cdn.vox-cdn.com/thumbor/o1bPD39n-_L9gQJrc20Zk-v1G0M=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19345388/Wordmark_Blue_Grey.jpg" alt="" />
+                    </div>
+
+
+
+                </div>
+              </div>
+            </div>
+          <div class="m-8">
+            <p class="text-center text-base leading-5 text-gray-400">
+              &copy; 2020 Hireplace. All rights reserved.
+            </p>
           </div>
+        </a>
         </div>
+        
       </div>
-      <div class="flex flex-col w-0 flex-1 overflow-hidden">
-        <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
-          <button class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden" aria-label="Open sidebar">
-            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-            </svg>
-          </button>
-          <div class="flex-1 px-4 flex justify-between">
-            <div class="flex-1 flex">
-              <div class="w-full flex md:ml-0">
-                <label for="search_field" class="sr-only">Search</label>
-                <div class="relative w-full text-gray-400 focus-within:text-gray-600">
-                  <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
-                    </svg>
-                  </div>
-                  <input id="search_field" class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm" placeholder="Search" type="search" />
-                </div>
-              </div>
-            </div>
-            <div class="ml-4 flex items-center md:ml-6">
-              <button class="p-1 text-gray-400 rounded-full hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:shadow-outline focus:text-gray-500" aria-label="Notifications">
-                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-              </button>
-    
-              <!-- Profile dropdown -->
-              <div class="ml-3 relative">
-                <div>
-                  <button class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline" id="user-menu" aria-label="User menu" aria-haspopup="true">
-                    <img class="h-8 w-auto" src="../static-img/wsg.png" alt="wsg" />
-                  </button>
-                </div>
-                <!--
-                  Profile dropdown panel, show/hide based on dropdown state.
-    
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-              </div>
-            </div>
-          </div>
-        </div>
-    
+      <div class="flex flex-col w-0 flex-1">
+        
+
         <main
-        class="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6"
-        tabindex="0"
-      >
-        <div class="pb-2 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <h1 class="text-2xl font-semibold text-gray-900">All Events</h1>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div class="bg-white shadow overflow-hidden sm:rounded-md">
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
-                >
-                  <div class="px-4 py-4 sm:px-6">
-                    <div class="flex items-center justify-between">
-                      <div
-                        class="text-sm leading-5 font-medium text-pink-600 truncate"
-                      >
-                        Virtual Job Interview for Lift & Escalator Sector
-                        (OTIS Singapore)
-                      </div>
-                      <div class="ml-2 flex-shrink-0 flex">
-                        <span
-                          class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                        >
-                          Published
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mt-2 sm:flex sm:justify-between">
-                      <div class="sm:flex">
-                        <div
-                          class="mr-6 flex items-center text-sm leading-5 text-gray-500"
-                        >
-                          Engineering
-                        </div>
-                        <div
-                          class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                        >
-                          <svg
-                            class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                          Singapore
-                        </div>
-                      </div>
-                      <div
-                        class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                      >
-                        Monday, 11 May 2020
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="border-t border-gray-200">
-                <a
-                  href="#"
-                  class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
-                >
-                  <div class="px-4 py-4 sm:px-6">
-                    <div class="flex items-center justify-between">
-                      <div
-                        class="text-sm leading-5 font-medium text-pink-600 truncate"
-                      >
-                        Virtual Job Interview for Lift & Escalator Sector
-                        (OTIS Singapore)
-                      </div>
-                      <div class="ml-2 flex-shrink-0 flex">
-                        <span
-                          class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                        >
-                          Published
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mt-2 sm:flex sm:justify-between">
-                      <div class="sm:flex">
-                        <div
-                          class="mr-6 flex items-center text-sm leading-5 text-gray-500"
-                        >
-                          Engineering
-                        </div>
-                        <div
-                          class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                        >
-                          <svg
-                            class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                          Singapore
-                        </div>
-                      </div>
-                      <div
-                        class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                      >
-                        Monday, 11 May 2020
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="border-t border-gray-200">
-                <a
-                  href="#"
-                  class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
-                >
-                  <div class="px-4 py-4 sm:px-6">
-                    <div class="flex items-center justify-between">
-                      <div
-                        class="text-sm leading-5 font-medium text-pink-600 truncate"
-                      >
-                        Virtual Job Interview for Lift & Escalator Sector
-                        (OTIS Singapore)
-                      </div>
-                      <div class="ml-2 flex-shrink-0 flex">
-                        <span
-                          class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
-                        >
-                          Published
-                        </span>
-                      </div>
-                    </div>
-                    <div class="mt-2 sm:flex sm:justify-between">
-                      <div class="sm:flex">
-                        <div
-                          class="mr-6 flex items-center text-sm leading-5 text-gray-500"
-                        >
-                          Engineering
-                        </div>
-                        <div
-                          class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                        >
-                          <svg
-                            class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                          Singapore
-                        </div>
-                      </div>
-                      <div
-                        class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                      >
-                        Monday, 11 May 2020
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+          class="bg-black flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6"
+          tabindex="0"
+        >
+
+         <div class="mt-64 flex justify-center">
+          <div class="text-center">
+            <h2 class="text-6xl tracking-tight font-extrabold text-gray-200">
+              5:43
+              <br />
+              <span class="text-pink-600 text-5xl">To interview with DStripes Co.
+              </span>
+            </h2>
+            
+          <span class="mt-12 ml-6 inline-flex rounded-full shadow-sm">
+            <button type="button" class="inline-flex items-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-sm text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700 transition ease-in-out duration-150">
+
+             Update Profile
+            </button>
+          </span>
+  </div>
+        <div class="bg-white absolute bottom-0 w-full ">
+          <div class="max-w-screen-xl mx-auto py-4 px-4 overflow-hidden sm:px-6 lg:px-8">
+
+            <div class="flex justify-center">
+              <span class="inline-flex rounded-full shadow-sm">
+                <button type="button" class="inline-flex items-center px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:border-gray-200 focus:shadow-outline-gray active:bg-gray-200 transition ease-in-out duration-150">
+                  <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                 
+                </button>
+              </span>
+              <span class="ml-6 inline-flex rounded-full shadow-sm">
+                <button type="button" class="inline-flex items-center px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700 transition ease-in-out duration-150">
+                  <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                 
+                </button>
+              </span>
+              <span class="ml-6 inline-flex rounded-full shadow-sm">
+                <button type="button" class="inline-flex items-center px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:border-gray-200 focus:shadow-outline-gray active:bg-gray-200 transition ease-in-out duration-150">
+                  <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                 
+                </button>
+              </span>
+
+            </div>
           </div>
         </div>
-      </main>
+        </main>
       </div>
     </div>
   </body>
